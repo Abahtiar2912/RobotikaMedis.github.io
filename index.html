@@ -1,338 +1,76 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMPLEMENTASI ROS PUBLISHER-SUBSCRIBER UNTUK KONTROL LED BERBASIS PUSH BUTTON</title>
     <link rel="stylesheet" href="styles.css">
+    <title>Smart Nurse Call System berbasis Micro-ROS</title>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">TUGAS PROYEK ROBOTIKA MEDIS</div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#introduction">Pendahuluan</a></li>
-                <li><a href="#architecture">Arsitektur</a></li>
-                <li><a href="#implementation">Implementasi</a></li>
-                <li><a href="#demo">Demo</a></li>
-                <li><a href="#conclusion">Kesimpulan</a></li>
-            </ul>
+    <header>
+        <div class="hero">
+            <h1>SMART NURSE CALL SYSTEM BERBASIS MICRO-ROS</h1>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">IMPLEMENTASI ROS PUBLISHER-SUBSCRIBER</h1>
-                <h2 class="hero-subtitle">SISTEM NURSE CALL BERBASIS IOT & ROS 2</h2>
-                <p class="hero-description">Andronikus (122430095), M. Aulia Bahtiar (122430062), Saif Khan Nazirun (122430060))</p>
-                <a href="#introduction" class="btn-primary">Mulai Presentasi</a>
-            </div>
-        </div>
+    <section class="introduction">
+        <h2>Introduction</h2>
+        <p>Background: The Smart Nurse Call System is a highly efficient communication tool designed to enhance the interaction between patients and healthcare providers.</p>
+        <p>Project Description: Utilizing Micro-ROS, this system aims to provide real-time updates and alerts to nursing staff.</p>
+        <p>Objectives: Improve response times, enhance patient monitoring, and streamline communication processes.</p>
     </section>
 
-    <!-- Introduction Section -->
-    <section id="introduction" class="section">
-        <div class="container">
-            <h2 class="section-title">Pendahuluan</h2>
-            <div class="content-grid">
-                <div class="card">
-                    <div class="card-icon">🎯</div>
-                    <h3>Tujuan Proyek</h3>
-                    <p>Mengimplementasikan protokol komunikasi Micro-ROS untuk menghubungkan mikrokontroler dengan ekosistem ROS 2.</p>
-                    <p>Membangun sistem komunikasi dua arah (Publisher/Subscriber) antara perangkat keras dan perangkat lunak.</p>
-                    <p>Membuat logika otomatisasi sederhana menggunakan Python Node untuk merespons panggilan darurat pasien.</p>
-                    <p>Memenuhi standar dasar arsitektur robotika medis: Sensing (Merasakan), Thinking (Memproses), dan Acting (Bertindak).</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🔧</div>
-                    <h3>Alat dan Bahan</h3>
-                    <p>Robot Operating System (ROS), Python/C++, ESP 32, GPIO Interface, Arduino IDE</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">📚</div>
-                    <h3>Manfaat</h3>
-                    <p>Memahami konsep komunikasi Publisher-Subscriber dalam sistem robotika dan aplikasi medis sederhana pada proyek nurse call.</p>
-                </div>
-            </div>
-            <div class="content-box">
-                <h3>Latar Belakang</h3>
-                <p>Dalam lingkungan rumah sakit modern (Smart Hospital), kecepatan respons tenaga medis terhadap panggilan pasien adalah faktor krusial yang menentukan keselamatan nyawa. Sistem pemanggilan perawat (Nurse Call System) konvensional seringkali masih menggunakan sistem analog atau kabel yang kaku, sulit dikembangkan, dan minim integrasi data.</p>
-                <p>Seiring berkembangnya teknologi Robotika Medis dan Internet of Things (IoT), diperlukan sebuah sistem yang tidak hanya sekadar membunyikan bel, tetapi juga mampu mengolah data secara digital. Oleh karena itu, proyek ini mengembangkan prototipe sistem pemanggilan cerdas yang terintegrasi dengan Robot Operating System 2 (ROS 2), standar global dalam pengembangan perangkat lunak robotika..</p>
-            </div>
-        </div>
+    <section class="implementation">
+        <h2>Implementation Steps</h2>
+        <h3>TAHAP 1: Software Installation</h3>
+        <p>Install WSL, ROS 2 Jazzy, and Docker</p>
+        <pre><code>sudo apt update
+sudo apt install docker.io
+</code></pre>
+
+        <h3>TAHAP 2: Network and Security Configuration</h3>
+        <p>Configure the network settings for safe communication.</p>
+
+        <h3>TAHAP 3: Hardware Assembly</h3>
+        <p>Refer to the wiring table below:</p>
+        <table>
+            <tr><th>Component</th><th>Connection</th></tr>
+            <tr><td>ESP32</td><td>GPIO 23 to LED</td></tr>
+        </table>
+
+        <h3>TAHAP 4: ESP32 Firmware Programming</h3>
+        <p>Deploy the firmware to the ESP32 chip.</p>
+
+        <h3>TAHAP 5: Manual Communication Testing</h3>
+        <p>Test communication using command line interface (CLI).</p>
+        <pre><code>ros2 topic pub /nurse_call std_msgs/String "Hello Nurse!"
+</code></pre>
+
+        <h3>TAHAP 6: Logic Node Implementation</h3>
+        <p>Implement the <code>nurse_bot.py</code> logic nodes:</p>
+        <pre><code>def nurse_call():
+    print('Nurse has been called!')
+</code></pre>
+
+        <h3>TAHAP 7: Full System Testing</h3>
+        <p>Conduct thorough end-to-end system tests.</p>
     </section>
 
-    <!-- Architecture Section -->
-    <section id="architecture" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">Arsitektur Sistem</h2>
-            <div class="architecture-diagram">
-                <div class="arch-box publisher">
-                    <h4>Input (Sensing)</h4>
-                    <p>Pasien menekan tombol pada ESP32. Data status tombol dibaca oleh sensor digital.</p>
-                    <div class="node-detail">
-                    </div>
-                </div>
-                <div class="arch-arrow">
-                    <div class="arrow-line"></div>
-                    <div class="arrow-label">ROS Topic: /button_state</div>
-                    <div class="arrow-head">→</div>
-                </div>
-                <div class="arch-box subscriber">
-                    <h4>SUBSCRIBER NODE</h4>
-                    <p>LED Control</p>
-                    <div class="node-detail">
-                        <ul>
-                            <li>Subscribe ke topic button</li>
-                            <li>Memproses data yang diterima</li>
-                            <li>Mengontrol status LED</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="content-box">
-                <h3>Komponen Utama</h3>
-                <div class="components-list">
-                    <div class="component">
-                        <strong>ROS Master:</strong> Koordinator komunikasi antar node
-                    </div>
-                    <div class="component">
-                        <strong>Publisher Node:</strong> Node yang membaca input dari push button dan mempublikasikan state
-                    </div>
-                    <div class="component">
-                        <strong>Subscriber Node:</strong> Node yang menerima data dan mengontrol LED
-                    </div>
-                    <div class="component">
-                        <strong>Topic:</strong> Channel komunikasi untuk pertukaran message
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="troubleshooting">
+        <h2>Troubleshooting</h2>
+        <table>
+            <tr><th>Issue</th><th>Solution</th></tr>
+            <tr><td>ESP32 not connecting</td><td>Check Wi-Fi settings</td></tr>
+            <tr><td>ROS 2 errors</td><td>Re-install ROS packages</td></tr>
+            <tr><td>Lag in communication</td><td>Optimize network settings</td></tr>
+            <tr><td>Sensor not responding</td><td>Check wiring</td></tr>
+            <tr><td>Unexpected software crashes</td><td>Update software libraries</td></tr>
+        </table>
     </section>
 
-    <!-- Implementation Section -->
-    <section id="implementation" class="section">
-        <div class="container">
-            <h2 class="section-title">Implementasi</h2>
-            <div class="code-section">
-                <h3>1. Publisher Node (button_publisher.py)</h3>
-                <div class="code-block">
-                    <pre><code>#!/usr/bin/env python
-import rospy
-from std_msgs.msg import Bool
-import RPi.GPIO as GPIO
-
-class ButtonPublisher:
-    def __init__(self):
-        rospy.init_node('button_publisher')
-        self.pub = rospy.Publisher('/button_state', Bool, queue_size=10)
-        self.button_pin = 17
-        
-        GPIO.setmode(GPIO.BCM)
-        GPIO.setup(self.button_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-        
-    def publish_button_state(self):
-        rate = rospy.Rate(10)  # 10 Hz
-        while not rospy.is_shutdown():
-            button_state = GPIO.input(self.button_pin) == GPIO.LOW
-            self.pub.publish(button_state)
-            rate.sleep()
-
-if __name__ == '__main__':
-    try:
-        publisher = ButtonPublisher()
-        publisher.publish_button_state()
-    except rospy.ROSInterruptException:
-        pass</code></pre>
-                </div>
-            </div>
-
-            <div class="code-section">
-                <h3>2. Subscriber Node (led_subscriber.py)</h3>
-                <div class="code-block">
-                    <pre><code>#!/usr/bin/env python
-import rospy
-from std_msgs.msg import Bool
-import RPi.GPIO as GPIO
-
-class LEDSubscriber:
-    def __init__(self):
-        rospy.init_node('led_subscriber')
-        self.led_pin = 27
-        
-        GPIO.setmode(GPIO.BCM)
-        GPIO.setup(self.led_pin, GPIO.OUT)
-        GPIO.output(self.led_pin, GPIO.LOW)
-        
-        rospy.Subscriber('/button_state', Bool, self.callback)
-        
-    def callback(self, msg):
-        if msg.data:
-            GPIO.output(self.led_pin, GPIO.HIGH)
-            rospy.loginfo("LED ON")
-        else:
-            GPIO.output(self.led_pin, GPIO.LOW)
-            rospy.loginfo("LED OFF")
-            
-    def spin(self):
-        rospy.spin()
-
-if __name__ == '__main__':
-    try:
-        subscriber = LEDSubscriber()
-        subscriber.spin()
-    except rospy.ROSInterruptException:
-        pass</code></pre>
-                </div>
-            </div>
-
-            <div class="implementation-steps">
-                <h3>Langkah-langkah Implementasi</h3>
-                <div class="steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h4>Persiapan Lingkungan Software (ROS 2 & WSL)</h4>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h4>Konfigurasi Jaringan & Keamanan</h4>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h4>Perakitan Perangkat Keras (Hardware)</h4>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h4>Pemrograman Firmware (ESP32)</h4>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">5</div>
-                        <div class="step-content">
-                            <h4>Pemrograman Logic Node (Laptop)</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="evaluation conclusion">
+        <h2>Evaluation and Conclusion</h2>
+        <p>This project has successfully demonstrated how to implement a Smart Nurse Call System utilizing Micro-ROS, showcasing the efficiency and reliability of the technology.</p>
     </section>
-
-    <!-- Demo Section -->
-    <section id="demo" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">Demo dan Hasil</h2>
-            <div class="demo-content">
-                <div class="demo-box">
-                    <h3>Cara Menjalankan</h3>
-                    <div class="command-list">
-                        <div class="command">
-                            <span class="command-label">Terminal 1:</span>
-                            <code>roscore</code>
-                        </div>
-                        <div class="command">
-                            <span class="command-label">Terminal 2:</span>
-                            <code>rosrun led_control button_publisher.py</code>
-                        </div>
-                        <div class="command">
-                            <span class="command-label">Terminal 3:</span>
-                            <code>rosrun led_control led_subscriber.py</code>
-                        </div>
-                        <div class="command">
-                            <span class="command-label">Monitor Topic:</span>
-                            <code>rostopic echo /button_state</code>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="results-grid">
-                    <div class="result-card">
-                        <h4>✓ Hasil Pengujian</h4>
-                        <ul>
-                            <li>Komunikasi publisher-subscriber berhasil</li>
-                            <li>LED merespon dengan baik terhadap input button</li>
-                            <li>Latensi komunikasi minimal (&lt;100ms)</li>
-                            <li>Sistem stabil dalam operasi berkelanjutan</li>
-                        </ul>
-                    </div>
-                    <div class="result-card">
-                        <h4>📊 Metrics</h4>
-                        <ul>
-                            <li>Publish Rate: 10 Hz</li>
-                            <li>Message Queue: 10</li>
-                            <li>Success Rate: 99.9%</li>
-                            <li>Average Latency: 50ms</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="video-demo">
-                    <div class="video-placeholder">
-                        <div class="video-icon">▶</div>
-                        <p>Area untuk Video Demo</p>
-                        <small>Upload video demonstrasi sistem anda di sini</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Conclusion Section -->
-    <section id="conclusion" class="section">
-        <div class="container">
-            <h2 class="section-title">Kesimpulan</h2>
-            <div class="conclusion-content">
-                <div class="conclusion-box">
-                    <h3>Kesimpulan</h3>
-                    <ul>
-                        <li>Berhasil mengimplementasikan sistem kontrol LED menggunakan arsitektur ROS Publisher-Subscriber</li>
-                        <li>Sistem menunjukkan komunikasi yang reliable dan efisien antara node publisher dan subscriber</li>
-                        <li>Konsep ini dapat dikembangkan untuk aplikasi robotika medis yang lebih kompleks seperti kontrol surgical robot atau monitoring sistem</li>
-                        <li>ROS Publisher-Subscriber menyediakan arsitektur yang scalable dan modular untuk sistem robotika</li>
-                    </ul>
-                </div>
-
-                <div class="conclusion-box">
-                    <h3>Pengembangan Selanjutnya</h3>
-                    <ul>
-                        <li>Implementasi multiple LED dengan berbagai pola kontrol</li>
-                        <li>Integrasi dengan sensor tambahan (suhu, jarak, dll)</li>
-                        <li>Pengembangan GUI untuk monitoring dan kontrol</li>
-                        <li>Implementasi safety mechanism untuk aplikasi medis</li>
-                        <li>Integrasi dengan sistem robotika medis yang lebih kompleks</li>
-                    </ul>
-                </div>
-
-                <div class="references">
-                    <h3>Referensi</h3>
-                    <ul>
-                        <li>ROS Documentation - <a href="http://wiki.ros.org" target="_blank">wiki.ros.org</a></li>
-                        <li>ROS Publisher-Subscriber Tutorial</li>
-                        <li>Raspberry Pi GPIO Programming</li>
-                        <li>Medical Robotics Systems and Applications</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Robotika Medis Project. All rights reserved.</p>
-            <p>Implementasi ROS Publisher-Subscriber untuk Kontrol LED</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
