@@ -1,5 +1,10 @@
-# Smart Nurse Call System  
+# Smart Nurse Call System
 **Mata Kuliah: Robotika Medis**
+| Nama | NIM |
+|------|-----|
+| Andronikus Parasian Siagian | 122430095 |
+| M. Aulia Bahtiar | 122430062 |
+| Saif Khan Nazirun |122430060 |
 
 Smart Nurse Call System merupakan proyek Robotika Medis berbasis
 mikrokontroler ESP32 dan Internet of Things (IoT) yang dirancang untuk
@@ -282,6 +287,8 @@ python3 nurse_bot.py
   - Tekan Tombol Fisik -> Lampu Merah Nyala & Terminal Laptop muncul peringatan "DARURAT".
   - Lepas Tombol -> Lampu Hijau Nyala.
 
+---
+
 ## 📌 4. Catatan Kendala dan Penyelesaian Masalah
 Selama proses pengembangan Sistem Nurse Call berbasis Micro-ROS, tim menghadapi berbagai kendala teknis yang berkaitan dengan kompilasi firmware, konfigurasi jaringan, serta integrasi Micro-ROS dengan ROS 2 Agent. Kendala-kendala ini umumnya muncul akibat perbedaan lingkungan sistem, keterbatasan image Docker, serta pengaturan keamanan jaringan pada sistem operasi host. Berikut adalah rincian kendala yang terjadi beserta analisis penyebab dan solusi yang diterapkan: 
 | No | Jenis Kendala | Deskripsi & Penyebab Masalah | Solusi (Troubleshooting) |
@@ -297,6 +304,8 @@ Meskipun terdapat kendala-kendala di atas, sistem akhirnya berhasil berjalan sta
 - Pentingnya Konfigurasi Jaringan: Dalam proyek IoT yang melibatkan subsistem (seperti WSL) dan Docker, pemahaman tentang IP Routing dan Firewall sangat krusial. Mode jaringan host atau mirrored terbukti menjadi solusi paling efektif. 
 - Keandalan Micro-ROS: Setelah koneksi terbentuk, protokol XRCE-DDS terbukti sangat andal. Data dari tombol dikirim secara real-time dengan latensi yang hampir tidak terasa, memenuhi standar kebutuhan sistem medis sederhana. 
 - Fleksibilitas ROS 2: Penggunaan Node Python memudahkan pembuatan logika otomatisasi ("Otak Sistem") dibandingkan harus memprogram logika kompleks langsung di dalam mikrokontroler.
+
+---
 
 ## 📷 Dokumentasi Proyek
 [🖼️ Klik untuk melihat dokumentasi](https://andronikus122430095-glitch.github.io/RobotikaMedis.github.io/WhatsApp%20Image%202025-12-07%20at%2018.34.56.jpeg)
