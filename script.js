@@ -167,16 +167,27 @@ document.addEventListener('DOMContentLoaded', () => {
         this.style.transform = 'scale(1)';
     });
     
+    // Sticky navigation scroll effect
+    const nav = document.querySelector('nav.sticky-nav');
+    
     // Active navigation highlighting
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('nav a');
+    const navLinks = document.querySelectorAll('nav.sticky-nav a');
     
     window.addEventListener('scroll', () => {
+        // Add scrolled class to nav
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+        
+        // Active section highlighting
         let current = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
-            if (pageYOffset >= (sectionTop - 100)) {
+            if (pageYOffset >= (sectionTop - 150)) {
                 current = section.getAttribute('id');
             }
         });
