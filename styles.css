@@ -1,91 +1,45 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* ======================
+   DOKUMENTASI SISTEM
+====================== */
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f5f7fa;
-    color: #333;
-    line-height: 1.8;
-}
-
-/* Header */
-header {
-    background: linear-gradient(135deg, #0a3d62, #1e90ff);
-    color: white;
-    padding: 60px 20px;
+.doc-image {
+    margin-top: 30px;
     text-align: center;
 }
 
-header h1 {
-    font-size: 2.6rem;
-    margin-bottom: 10px;
+.doc-image img {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 14px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.2);
 }
 
-header p {
-    max-width: 900px;
-    margin: auto;
-    font-size: 1.1rem;
+.doc-image figcaption {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: #555;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Navigation */
-nav {
-    background-color: #0a3d62;
+/* VIDEO */
+.video-container {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.video-container video {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 14px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+.video-caption {
     text-align: center;
-    padding: 12px;
-    position: sticky;
-    top: 0;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: 500;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Section */
-section {
-    max-width: 1100px;
-    margin: auto;
-    padding: 60px 20px;
-}
-
-section h2 {
-    color: #0a3d62;
-    border-bottom: 3px solid #1e90ff;
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
-/* List */
-ul, ol {
-    margin-left: 25px;
-}
-
-/* Footer */
-footer {
-    background-color: #0a3d62;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    nav a {
-        display: block;
-        margin: 8px 0;
-    }
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: 10px;
 }
