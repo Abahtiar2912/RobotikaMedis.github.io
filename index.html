@@ -407,6 +407,69 @@ autoProxy=true</code></pre>
 <section id="tahap4">
   <h2>💾 TAHAP 4: Pemrograman Firmware ESP32</h2>
   
+  <div class="code-download-banner">
+    <div class="download-info">
+      <h3>📥 Arduino Source Code</h3>
+      <p>Download file lengkap <code>robotika_medis.ino</code> untuk ESP32</p>
+      <ul class="code-features">
+        <li>✅ Micro-ROS Publisher & Subscriber</li>
+        <li>✅ WiFi Configuration</li>
+        <li>✅ GPIO Pin Definitions</li>
+        <li>✅ Callback Functions</li>
+        <li>✅ Ready to Upload</li>
+      </ul>
+    </div>
+    <div class="download-actions">
+      <a href="robotika_medis.ino" download class="download-btn primary">
+        <span class="btn-icon">📥</span>
+        <span class="btn-text">Download .ino File</span>
+        <span class="btn-size">~4 KB</span>
+      </a>
+      <button onclick="showCodePreview()" class="download-btn secondary">
+        <span class="btn-icon">👁️</span>
+        <span class="btn-text">Preview Code</span>
+      </button>
+    </div>
+  </div>
+  
+  <div id="codePreview" class="code-preview" style="display: none;">
+    <div class="preview-header">
+      <h4>📜 Code Preview: robotika_medis.ino</h4>
+      <button onclick="closeCodePreview()" class="close-btn">✖</button>
+    </div>
+    <pre><code class="language-cpp">#include &lt;micro_ros_arduino.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;rcl/rcl.h&gt;
+#include &lt;rcl/error_handling.h&gt;
+#include &lt;rclc/rclc.h&gt;
+#include &lt;rclc/executor.h&gt;
+#include &lt;std_msgs/msg/bool.h&gt;
+
+// ============================================================
+// 1. KONFIGURASI JARINGAN (DEFAULT)
+// ============================================================
+// Ubah bagian ini sesuai dengan Hotspot/WiFi yang digunakan
+char ssid[] = "MASUKKAN_NAMA_WIFI"; 
+char password[] = "MASUKKAN_PASSWORD"; 
+
+// IP Address Laptop/Server (Cek menggunakan 'ip a' atau 'ipconfig')
+char agent_ip[] = "192.168.X.X"; 
+
+// Port standar komunikasi Micro-ROS (UDP)
+size_t agent_port = 8888;
+
+// ============================================================
+// 2. DEFINISI PIN HARDWARE (GPIO)
+// ============================================================
+#define BUTTON_PIN 16  // Input: Push Button
+#define BUZZER_PIN 25  // Output: Active Buzzer
+#define LED_RED 23     // Output: Indikator Bahaya (Merah)
+#define LED_GREEN 22   // Output: Indikator Aman (Hijau)
+
+// ... (Rest of the code - 124 lines total)
+// Download file lengkap untuk melihat semua fungsi!</code></pre>
+  </div>
+  
   <h3>4.1. Setup Arduino IDE</h3>
   <ul>
     <li>Install Arduino IDE 2.0+</li>

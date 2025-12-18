@@ -193,3 +193,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
     console.log("✅ Smart Nurse Call System - All enhancements loaded!");
 });
+
+// Code Preview Functions
+function showCodePreview() {
+    const preview = document.getElementById('codePreview');
+    preview.style.display = 'block';
+    preview.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function closeCodePreview() {
+    const preview = document.getElementById('codePreview');
+    preview.style.display = 'none';
+}
