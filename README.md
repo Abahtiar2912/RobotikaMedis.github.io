@@ -1,5 +1,11 @@
-# Smart Nurse Call System
-**Mata Kuliah: Robotika Medis**
+<p align="center">
+  <img src="header.png" alt="header.png" width="80%">
+</p>
+
+<h1 align="center">Smart Nurse Call System</h1>
+<p align="center">
+  <i>Project MK Robotika Medis</i>
+</p>
 | Nama | NIM |
 |------|-----|
 | Andronikus Parasian Siagian | 122430095 |
