@@ -1,93 +1,36 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Nurse Call System | Robotika Medis</title>
+<section id="dokumentasi">
+    <h2>Dokumentasi Implementasi Sistem</h2>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-<header>
-    <h1>Smart Nurse Call System</h1>
     <p>
-        Sistem pemanggilan perawat nirkabel berbasis Micro-ROS 
-        sebagai implementasi Robotika Medis pada Smart Hospital
+        Dokumentasi berikut menunjukkan implementasi perangkat keras dan
+        pengujian sistem Smart Nurse Call berbasis Micro-ROS yang dikembangkan
+        menggunakan ESP32 dan ROS 2.
     </p>
-</header>
 
-<nav>
-    <a href="#pendahuluan">Pendahuluan</a>
-    <a href="#deskripsi">Deskripsi</a>
-    <a href="#tujuan">Tujuan</a>
-    <a href="#tahapan">Tahapan</a>
-    <a href="#evaluasi">Evaluasi</a>
-</nav>
+    <!-- FOTO -->
+    <h3>Dokumentasi Perangkat Keras</h3>
+    <figure class="doc-image">
+        <img src="assets/images/nurse-call-hardware.jpg"
+             alt="Perangkat keras Smart Nurse Call berbasis ESP32">
+        <figcaption>
+            Gambar 1. Rangkaian hardware Smart Nurse Call System yang terdiri
+            dari ESP32, push button, LED indikator, buzzer, dan LCD sebagai
+            antarmuka notifikasi.
+        </figcaption>
+    </figure>
 
-<section id="pendahuluan">
-    <h2>Pendahuluan</h2>
-    <p>
-        Dalam ekosistem Smart Hospital, kecepatan respons tenaga medis menjadi
-        faktor krusial dalam keselamatan pasien. Sistem Nurse Call konvensional
-        yang masih berbasis kabel memiliki keterbatasan fleksibilitas dan integrasi data.
-    </p>
-    <p>
-        Perkembangan Robotika Medis dan IoT mendorong hadirnya sistem
-        pemanggilan perawat yang cerdas, nirkabel, dan terintegrasi dengan ROS 2.
+    <!-- VIDEO -->
+    <h3>Video Demonstrasi Sistem</h3>
+    <div class="video-container">
+        <video controls>
+            <source src="assets/videos/nurse-call-demo.mp4" type="video/mp4">
+            Browser Anda tidak mendukung pemutaran video.
+        </video>
+    </div>
+
+    <p class="video-caption">
+        Video 1. Demonstrasi kerja sistem Nurse Call, dimana penekanan tombol
+        pasien secara real-time memicu notifikasi visual dan audio melalui
+        komunikasi Micro-ROS.
     </p>
 </section>
-
-<section id="deskripsi">
-    <h2>Deskripsi Proyek</h2>
-    <ul>
-        <li>Node terdistribusi antara ESP32 dan Laptop</li>
-        <li>Push Button sebagai input panggilan pasien</li>
-        <li>LED dan buzzer sebagai aktuator notifikasi</li>
-        <li>Komunikasi real-time menggunakan Micro-ROS</li>
-    </ul>
-</section>
-
-<section id="tujuan">
-    <h2>Tujuan Pengembangan</h2>
-    <ul>
-        <li>Mengimplementasikan komunikasi Micro-ROS</li>
-        <li>Membangun sistem kendali tertutup berbasis ROS 2</li>
-        <li>Menerapkan konsep Robotika Medis dan IoT</li>
-        <li>Memenuhi CPMK mata kuliah Robotika Medis</li>
-    </ul>
-</section>
-
-<section id="tahapan">
-    <h2>Tahapan Pembuatan Sistem</h2>
-    <ol>
-        <li>Instalasi ROS 2 dan WSL</li>
-        <li>Konfigurasi jaringan dan keamanan</li>
-        <li>Perakitan hardware ESP32</li>
-        <li>Pemrograman firmware Micro-ROS</li>
-        <li>Pengujian manual dan otomatis</li>
-    </ol>
-</section>
-
-<section id="evaluasi">
-    <h2>Evaluasi Sistem</h2>
-    <p>
-        Sistem berjalan stabil dengan latensi rendah.
-        Micro-ROS menunjukkan keandalan komunikasi,
-        sedangkan ROS 2 memberikan fleksibilitas tinggi
-        dalam pengembangan logika otomatisasi.
-    </p>
-</section>
-
-<footer>
-    <p>© 2025 | Robotika Medis – Smart Nurse Call System</p>
-</footer>
-
-<!-- JavaScript -->
-<script src="js/script.js"></script>
-</body>
-</html>
