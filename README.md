@@ -13,11 +13,12 @@ panggilan otomatis yang responsif dan efisien.
 
 ---
 
-## 📌 Latar Belakang
-Dalam lingkungan rumah sakit, sistem pemanggil perawat konvensional masih
-memiliki keterbatasan, seperti minimnya informasi kondisi pasien dan
-keterlambatan respon. Oleh karena itu, diperlukan sistem berbasis robotika
-medis dan IoT yang mampu meningkatkan kualitas pelayanan kesehatan.
+## 📌 Pendahuluan
+Dalam ekosistem rumah sakit modern (Smart Hospital), efisiensi dan kecepatan respons tenaga medis merupakan faktor vital dalam keselamatan pasien. Sistem pemanggilan perawat (Nurse Call System) konvensional umumnya masih berbasis analog (kabel) yang kaku, sulit dikembangkan, dan tidak terintegrasi dengan sistem data digital. 
+
+Seiring dengan perkembangan teknologi Robotika Medis, diperlukan sistem yang lebih cerdas, fleksibel, dan berbasis data. Oleh karena itu, proyek ini mengembangkan prototipe sistem Nurse Call nirkabel yang memanfaatkan Robot Operating System 2 (ROS 2). Penggunaan ROS 2 memungkinkan sistem ini dikembangkan lebih lanjut menjadi robot asisten otonom di masa depan. 
+
+Proyek ini berjudul "Smart Nurse Call System berbasis Micro-ROS". Sistem ini adalah implementasi sistem cerdas berbasis ROS 2 yang menghubungkan perangkat keras mikrokontroler (ESP32) dengan komputer pusat (Nurse Station) melalui jaringan WiFi. 
 
 ---
 
@@ -31,8 +32,8 @@ medis dan IoT yang mampu meningkatkan kualitas pelayanan kesehatan.
 
 ## 🧠 Arsitektur Sistem
 Sistem terdiri dari ESP32 sebagai pengendali utama yang menerima input dari
-tombol pasien dan memberikan output berupa indikator LED, buzzer, serta
-tampilan LCD. Sistem dapat dikembangkan ke jaringan IoT dan middleware robotik.
+tombol pasien dan memberikan output berupa indikator LED dan buzzer. 
+Sistem dapat dikembangkan ke jaringan IoT dan middleware robotik.
 
 ---
 
@@ -41,7 +42,6 @@ tampilan LCD. Sistem dapat dikembangkan ke jaringan IoT dan middleware robotik.
 ### Perangkat Keras
 - ESP32
 - Push Button
-- LCD I2C
 - LED
 - Buzzer
 - Breadboard dan kabel jumper
