@@ -10,11 +10,13 @@
   ![Docker](https://img.shields.io/badge/Docker-Micro--ROS-blue?style=for-the-badge&logo=docker)
   
   <p align="center">
+    <a href="#-tentang-proyek">Tentang</a> •
     <a href="#-fitur-unggulan">Fitur</a> •
-    <a href="#-komponen-sistem">Komponen</a> •
-    <a href="#-arsitektur">Arsitektur</a> •
-    <a href="#%EF%B8%8F-instalasi">Instalasi</a> •
-    <a href="#-dokumentasi">Dokumentasi</a>
+    <a href="#-arsitektur-sistem">Arsitektur</a> •
+    <a href="#%EF%B8%8F-komponen-sistem">Komponen</a> •
+    <a href="#-instalasi--setup">Instalasi</a> •
+    <a href="#-troubleshooting--problem-solving">Troubleshooting</a> •
+    <a href="#-dokumentasi-visual">Dokumentasi</a>
   </p>
 </div>
 
@@ -96,6 +98,8 @@ graph LR
 
 </div>
 
+---
+
 ### 📋 Alur Kerja Sistem
 
 1. **Input Pasien** → Pasien menekan tombol darurat fisik
@@ -160,7 +164,7 @@ graph LR
 
 ---
 
-## � Instalasi & Setup
+## 🚀 Instalasi & Setup
 
 <div align="center">
   
@@ -280,9 +284,9 @@ New-NetFirewallRule -DisplayName "MicroROS Agent" -Direction Inbound -LocalPort 
 
 ### 3.1. Alat dan Bahan (Komponen Sistem)
 
-Sistem ini terdiri dari perangkat keras (hardware) di sisi pasien dan perangkat lunak (software) di sisi server. 
+Sistem ini terdiri dari perangkat keras (hardware) di sisi pasien dan perangkat lunak (software) di sisi server.
 
-A. Perangkat Keras (Hardware): 
+**A. Perangkat Keras (Hardware):** 
 - ESP32 DOIT DEVKIT V1: Mikrokontroler utama yang berfungsi sebagai pemroses data dan modul komunikasi WiFi. 
 - Push Button (Tactile Switch): Sensor input manual untuk memicu sinyal darurat. 
 - LED Merah (5mm): Indikator visual untuk status bahaya/panggilan aktif. 
@@ -485,7 +489,7 @@ python3 nurse_bot.py
 
 ---
 
-## � Troubleshooting & Problem Solving
+## 🚧 Troubleshooting & Problem Solving
 
 <div align="center">
   
@@ -562,6 +566,28 @@ Penggunaan **Python Node** memudahkan pembuatan logika otomatisasi ("Otak Sistem
 
 ---
 
+## 💡 Tips & Best Practices
+
+### 🔧 Development Tips
+- Selalu cek koneksi WiFi sebelum menjalankan sistem
+- Monitor log di terminal untuk debugging real-time
+- Gunakan `ros2 topic list` untuk melihat semua topic aktif
+- Backup konfigurasi WiFi sebelum mengubah setting
+
+### 🎯 Production Recommendations
+- Gunakan static IP untuk ESP32 agar lebih stabil
+- Implementasikan watchdog timer untuk auto-recovery
+- Tambahkan authentication untuk keamanan komunikasi
+- Setup monitoring dashboard untuk multiple devices
+
+### 📚 Learning Resources
+- [ROS 2 Official Documentation](https://docs.ros.org/en/jazzy/)
+- [Micro-ROS Tutorial](https://micro.ros.org/)
+- [ESP32 Arduino Core](https://docs.espressif.com/projects/arduino-esp32/)
+- [Docker Documentation](https://docs.docker.com/)
+
+---
+
 ## 🤝 Contributing
 
 Kami menerima kontribusi dari komunitas! Jika Anda ingin berkontribusi:
@@ -584,11 +610,29 @@ Project ini dibuat untuk keperluan akademik **Mata Kuliah Robotika Medis**. Sila
 
 <div align="center">
 
+### 💬 Get in Touch
+
 Jika ada pertanyaan atau butuh bantuan, silakan buka **Issues** di repository ini.
+
+[![GitHub Issues](https://img.shields.io/github/issues/Abahtiar2912/RobotikaMedis.github.io?style=for-the-badge)](https://github.com/Abahtiar2912/RobotikaMedis.github.io/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/Abahtiar2912/RobotikaMedis.github.io?style=for-the-badge)](https://github.com/Abahtiar2912/RobotikaMedis.github.io/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/Abahtiar2912/RobotikaMedis.github.io?style=for-the-badge)](https://github.com/Abahtiar2912/RobotikaMedis.github.io/network/members)
+
+---
+
+### 🎓 Project Information
+
+**Mata Kuliah:** Robotika Medis  
+**Institusi:** [Nama Universitas]  
+**Tahun:** 2025
+
+---
 
 **Made with ❤️ by Robotika Medis Team**
 
 ⭐ **Star repository ini jika bermanfaat!** ⭐
+
+<sub>Built with ESP32 • ROS 2 • Micro-ROS • Docker • Python</sub>
 
 </div>
 
