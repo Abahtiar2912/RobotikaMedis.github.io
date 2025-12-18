@@ -300,7 +300,7 @@ Meskipun terdapat kendala-kendala di atas, sistem akhirnya berhasil berjalan sta
 
 ## 📷 Dokumentasi Proyek
 ### Perakitan Hardware
-![Perakitan Sistem](WhatsApp Image 2025-12-07 at 18.34.56.jpeg)
+![Perakitan Sistem](docs/WhatsApp Image 2025-12-07 at 18.34.56.jpeg)
 
 ### Sistem Berjalan
 [▶️ Video Demonstrasi](video/demo.mp4)
