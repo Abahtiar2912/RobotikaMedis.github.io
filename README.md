@@ -50,12 +50,12 @@ tampilan LCD. Sistem dapat dikembangkan ke jaringan IoT dan middleware robotik.
 ---
 
 ## 🔧 Tahapan Pembuatan Sistem
-###TAHAP 1: Instalasi Software (Environment Setup) 
+### TAHAP 1: Instalasi Software (Environment Setup) 
 Sistem operasi utama yang digunakan adalah Windows 11 dengan subsistem Linux (WSL 2) yang menjalankan Ubuntu 24.04. 
 1.1. Instalasi WSL 2 (Ubuntu 24.04) 
 - Buka PowerShell sebagai Administrator. 
 - Jalankan perintah instalasi: 
-'''wsl --install -d Ubuntu-24.04 
+```wsl --install -d Ubuntu-24.04```
 - Restart komputer jika diminta. 
 - Buka aplikasi "Ubuntu" dari Start Menu, lalu buat username dan password UNIX baru. 
 
