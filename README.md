@@ -817,13 +817,13 @@ Membuat dokumentasi troubleshooting yang sistematis menghemat waktu debugging hi
   
 ### 🖼️ Gallery Proyek
 
-<a href="https://andronikus122430095-glitch.github.io/RobotikaMedis.github.io/WhatsApp%20Image%202025-12-07%20at%2018.34.56.jpeg">
+<a href="https://abahtiar2912.github.io/RobotikaMedis.github.io/Gambar%20Rangkaian%20Pada%20Breadboard.jpeg">
   <img src="https://img.shields.io/badge/📷_Hardware_Setup-View_Image-4CAF50?style=for-the-badge" />
 </a>
 
 ### 🎥 Demo Video
 
-<a href="https://andronikus122430095-glitch.github.io/RobotikaMedis.github.io/WhatsApp%20Video%202025-12-07%20at%2018.32.37.mp4">
+<a href="https://abahtiar2912.github.io/RobotikaMedis.github.io/Video%20Demonstrasi%20Alat.mp4">
   <img src="https://img.shields.io/badge/▶️_System_Demo-Watch_Video-FF0000?style=for-the-badge&logo=youtube" />
 </a>
 

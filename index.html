@@ -15,6 +15,12 @@
     
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏥</text></svg>">
+    
+    <!-- Mermaid JS for Diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
 </head>
 <body>
 
@@ -58,6 +64,7 @@
     <a href="#pendahuluan">Pendahuluan</a>
     <a href="#fitur">Fitur</a>
     <a href="#arsitektur">Arsitektur</a>
+    <a href="#tujuan">Tujuan & Manfaat</a>
     <a href="#komponen">Komponen</a>
     <a href="#tahap1">Instalasi</a>
     <a href="#tahap2">Konfigurasi</a>
@@ -122,6 +129,21 @@
 <section id="arsitektur">
   <h2>🧠 Arsitektur Sistem</h2>
   
+  <div class="diagram-container">
+    <h3>📊 Diagram Blok Sistem</h3>
+    <div class="mermaid">
+graph LR
+    A[👤 Patient<br/>Push Button] -->|GPIO Input| B[ESP32<br/>Micro-ROS Client]
+    B -->|LED Merah| C[🔴 Visual Alert]
+    B -->|LED Hijau| D[🟢 Safe Status]
+    B -->|Buzzer| E[🔊 Audio Alert]
+    B -->|WiFi/UDP| F[Micro-ROS Agent<br/>Docker Container]
+    F -->|ROS 2 Topics| G[🖥️ Nurse Station<br/>Logic Node]
+    G -->|/led_command| B
+    B -->|/button_state| G
+    </div>
+  </div>
+  
   <h3>📋 Alur Kerja Sistem</h3>
   <ol>
     <li><strong>Input Pasien</strong> → Pasien menekan tombol darurat fisik</li>
@@ -131,6 +153,26 @@
     <li><strong>Logic Processing</strong> → Python node (<code>nurse_bot.py</code>) memproses logika dan mem-publish ke <code>/led_command</code></li>
     <li><strong>Actuator Response</strong> → ESP32 subscribe ke <code>/led_command</code> dan mengaktifkan LED + Buzzer</li>
   </ol>
+</section>
+
+<section id="tujuan">
+  <h2>🎯 Tujuan & Manfaat</h2>
+  
+  <h3>🎓 Tujuan Pembelajaran</h3>
+  <ul>
+    <li>✅ Implementasi <strong>Micro-ROS</strong> pada sistem embedded</li>
+    <li>✅ Penerapan <strong>Publisher-Subscriber Pattern</strong> ROS 2</li>
+    <li>✅ Integrasi <strong>ESP32</strong> dengan middleware robotik</li>
+    <li>✅ Pengembangan <strong>IoT Medical Device</strong> berbasis open-source</li>
+  </ul>
+
+  <h3>🏥 Manfaat Praktis</h3>
+  <ul>
+    <li>💡 Meningkatkan kecepatan respons tenaga medis terhadap panggilan pasien</li>
+    <li>💡 Sistem scalable yang dapat diintegrasikan dengan robot medis otonom</li>
+    <li>💡 Platform pembelajaran untuk riset Robotika Medis</li>
+    <li>💡 Monitoring terpusat dengan log real-time untuk evaluasi layanan</li>
+  </ul>
 </section>
 
 <section id="komponen">
@@ -886,6 +928,32 @@ ros2 topic pub --once /led_command std_msgs/msg/Bool "{data: true}"</code></pre>
         </tr>
       </tbody>
     </table>
+  </div>
+
+  <!-- Diagnostic Flowchart -->
+  <div class="diagram-container">
+    <h3>🎯 Diagnostic Flowchart</h3>
+    <p style="text-align: center; margin-bottom: 20px;">Panduan langkah demi langkah untuk mendiagnosis masalah sistem</p>
+    <div class="mermaid">
+graph TD
+    A[🚀 Start System] --> B{Agent Running?}
+    B -->|No| C[Run Docker Agent]
+    B -->|Yes| D{ESP32 Connected?}
+    C --> D
+    D -->|No| E{Check IP Address}
+    E -->|WSL IP = Windows IP?| F[Enable Mirrored Mode]
+    E -->|Yes| G{Firewall Open?}
+    F --> G
+    G -->|No| H[Add Firewall Rule]
+    G -->|Yes| D
+    H --> D
+    D -->|Yes| I{ROS 2 CLI Works?}
+    I -->|Timeout| J[Use --no-daemon flag]
+    I -->|Command Not Found| K[Use ros:jazzy container]
+    I -->|Yes| L[✅ System Ready]
+    J --> L
+    K --> L
+    </div>
   </div>
 
   <!-- Performance Metrics -->
