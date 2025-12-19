@@ -1266,3 +1266,48 @@ nav a:hover::after {
         font-size: 0.9rem;
     }
 }
+
+/* ===== DIAGRAM STYLES ===== */
+.diagram-container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 30px 0;
+    text-align: center;
+}
+
+.diagram-container h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.diagram-container .mermaid {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+/* Mermaid diagram custom styling */
+.mermaid svg {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .diagram-container {
+        padding: 20px 15px;
+    }
+    
+    .diagram-container h3 {
+        font-size: 1.5rem;
+    }
+    
+    .diagram-container .mermaid {
+        padding: 15px;
+        font-size: 0.85rem;
+    }
+}
