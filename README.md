@@ -888,7 +888,7 @@ Jika ada pertanyaan atau butuh bantuan, silakan buka **Issues** di repository in
 ### 🎓 Project Information
 
 **Mata Kuliah:** Robotika Medis  
-**Institusi:** [Nama Universitas]  
+**Institusi:** Institut Teknologi Sumatera  
 **Tahun:** 2025
 
 ---
